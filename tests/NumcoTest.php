@@ -74,7 +74,7 @@ final class NumcoTest extends TestCase {
 
     public function testUrlSafeContainsNoForbiddenChars()
     {
-        $compressed = Numco::compress(static::$testData);
+        $compressed = Numco::compressUrlSafe(static::$testData);
         $this->assertEquals(strlen($compressed), 90);
         $this->assertNotContains($compressed, ['+','/']);
     }
